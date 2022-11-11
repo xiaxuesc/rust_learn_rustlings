@@ -13,7 +13,23 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
+    match num {
+        x if (x == 0 || x == 1) => 1,
+        x if x > 1 => { 
+            let mut num = num;
+            let mut count = num;
+            loop {
+                count = count - 1; 
+                num = num * count;
+                if count == 1 {break;}
+            }
+            num
+        },
+        _ => todo!(),
+    }
+    
 }
+    
 
 #[cfg(test)]
 mod tests {
